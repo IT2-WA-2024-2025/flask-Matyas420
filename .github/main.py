@@ -12,10 +12,6 @@ def Home_page():
 def kontakt():
     return "Toto bude stránka s kontakty"
 
-@app.route("/titulni-stranka")
-def stranka():
-    return "Toto bude titulní stránka"
-
 @app.route("/product/<id>")
 def product(id:int):
     return f"Toto bude stránka s produkty {id}"
@@ -54,3 +50,4 @@ if __name__ == "__main__":
 @app.route('/')
 def home_page():
     return  render_template('index.html')
+
