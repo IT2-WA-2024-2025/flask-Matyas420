@@ -6,11 +6,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def Home_page():
-    return "Zde bude úvodní stránka pro náš blog"
+    return  render_template('index.html')
 
 @app.route("/kontakt")
 def kontakt():
-    return "Toto bude stránka s kontakty"
+    return render_template('contact.html')
 
 @app.route("/product/<id>")
 def product(id:int):
@@ -19,10 +19,6 @@ def product(id:int):
 @app.route("/category/<jmeno>")
 def category(jmeno):
     return f"Toto bude stránka s kategoriemi {jmeno}"
-
-@app.route("/")
-def uzivatel(name):
-    return f"Profil uživatele: {name}"
 
 #-------- První cvičení --------
 
@@ -45,9 +41,5 @@ def arctile(id):
 if __name__ == "__main__":
     app.run(debug=True)
 
-#-------- Nevím něco --------
 
-@app.route('/')
-def home_page():
-    return  render_template('index.html')
 
