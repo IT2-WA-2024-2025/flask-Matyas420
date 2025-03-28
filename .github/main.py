@@ -12,13 +12,13 @@ def Home_page():
 def kontakt():
     return render_template('contact.html')
 
-@app.route("/product/<id>")
-def product(id:int):
-    return f"Toto bude stránka s produkty {id}"
+@app.route("/product")
+def product():
+    return "Toto bude stránka s produkty"
 
-@app.route("/category/<jmeno>")
-def category(jmeno):
-    return f"Toto bude stránka s kategoriemi {jmeno}"
+@app.route("/category")
+def category():
+    return "Toto bude stránka s kategoriemi"
 
 #-------- První cvičení --------
 
