@@ -38,6 +38,15 @@ def article():
 def arctile(id):
     return f"Zobrazí přesné informace o uživateli {id}"
 
+#----------- Profile -----------
+
+@app.route("/profile")
+def profil():
+    jmeno = "Matyáš Poledník"
+    vek = 17
+    return render_template("profil.html", jmeno=jmeno, vek=vek)
+
+
 if __name__ == "__main__":
     app.run(debug=True)
 

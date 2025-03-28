@@ -22,13 +22,16 @@
       </ul>
     </div>
   </nav>
-   <ul>
-      <li a href="/">Domů<li>
-      <li a href="/contact">Kontakty<li>
-      <li a href="/about">Onas<li>
-      <li a href="/category">Kategorie<li>
-      <li a href="/product">Produkty<li>
-      <li a href="/article">Článek<li>
-   <ul>
+  {% set jmeno = "Matyáš Poledník" %}
+  {% set vek = 17 %}
+  
+  <p>Jméno: {{ jmeno }}</p>
+  <p>Věk: {{ vek }}</p>
+  
+  {% if vek > 18 %}
+      <p>Uživatel je plnoletý.</p>
+  {% else %}
+      <p>Uživatel je nezletilý.</p>
+  {% endif %}
  </body>
  </html>
