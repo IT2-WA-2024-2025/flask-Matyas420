@@ -34,9 +34,18 @@ def about():
 def contact():
     return "Toto bude stránka s kontakty"
 
+#------- Article ----------
+
+article = [
+    {"title": "Jak začít s Pythonem", "date": "2025-03-31", "author": "Jan Novák"},
+    {"title": "Flask: Webový framework pro začátečníky", "date": "2025-03-30", "author": "Petr Svoboda"},
+    {"title": "Datové struktury v Pythonu", "date": "2025-03-29", "author": "Eva Dvořáková"}
+]
+
 @app.route("/article")
 def article():
-    return "Zobrazí obsah stránku"
+    return render_template('index.html', article=article)
+
 
 @app.route("/article/<id>")
 def arctile(id):
@@ -49,6 +58,8 @@ def profil():
     jmeno = "Matyáš Poledník"
     vek = 18
     return render_template("index.html", jmeno=jmeno, vek=vek)
+
+#--------- Výpis článků --------
 
 
 if __name__ == "__main__":
