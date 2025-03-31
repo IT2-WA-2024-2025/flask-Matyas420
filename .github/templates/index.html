@@ -22,13 +22,14 @@
       </ul>
     </div>
   </nav>
+  <h1>Profil uživatele</h1>
   {% set jmeno = "Matyáš Poledník" %}
-  {% set vek = 17 %}
+  {% set vek = 18 %}
   
   <p>Jméno: {{ jmeno }}</p>
   <p>Věk: {{ vek }}</p>
   
-  {% if vek > 18 %}
+  {% if vek >= 18 %}
       <p>Uživatel je plnoletý.</p>
   {% else %}
       <p>Uživatel je nezletilý.</p>

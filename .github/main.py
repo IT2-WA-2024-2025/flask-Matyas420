@@ -4,9 +4,13 @@ app = Flask(__name__)
 
 #----------- Úvod -----------
 
+clanky = [
+    {"title": "" }
+]
+
 @app.route("/")
 def Home_page():
-    return  render_template('index.html')
+    return  render_template('index.html', clanky=clanky)
 
 @app.route("/kontakt")
 def kontakt():
@@ -43,8 +47,8 @@ def arctile(id):
 @app.route("/profile")
 def profil():
     jmeno = "Matyáš Poledník"
-    vek = 17
-    return render_template("profil.html", jmeno=jmeno, vek=vek)
+    vek = 18
+    return render_template("index.html", jmeno=jmeno, vek=vek)
 
 
 if __name__ == "__main__":
