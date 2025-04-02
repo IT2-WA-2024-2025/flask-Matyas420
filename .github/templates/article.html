@@ -15,13 +15,15 @@
       <li a href="/product">Produkty<li>
       <li a href="/article">Článek<li>
    <ul>
-
-
-
-
-
-
-
-    
+    <h1>Seznam článků</h1>
+    <ul>
+        {% for article in article %}
+          <li>
+            <strong>{{ article.title }}</strong>
+              Datum: {{ article.date }}
+              Autor: {{ article.author }}
+          </li>
+        {% endfor %}
+    </ul>
  </body>
  </html>

@@ -35,21 +35,15 @@ def contact():
     return "Toto bude stránka s kontakty"
 
 #------- Article ----------
-
-article = [
-    {"title": "Jak začít s Pythonem", "date": "2025-03-31", "author": "Jan Novák"},
-    {"title": "Flask: Webový framework pro začátečníky", "date": "2025-03-30", "author": "Petr Svoboda"},
-    {"title": "Datové struktury v Pythonu", "date": "2025-03-29", "author": "Eva Dvořáková"}
-]
-
 @app.route("/article")
-def article():
-    return render_template('index.html', article=article)
+def clanek():
+    article = [
+    {"Název": "Jak začít s Pythonem", "date": "2025-03-31", "author": "Jan Novák"},
+    {"Název": "Flask: Webový framework pro začátečníky", "date": "2025-03-30", "author": "Petr Svoboda"},
+    {"Název": "Datové struktury v Pythonu", "date": "2025-03-29", "author": "Eva Dvořáková"}]
 
 
-@app.route("/article/<id>")
-def arctile(id):
-    return f"Zobrazí přesné informace o uživateli {id}"
+    return render_template('article.html', article=article)
 
 #----------- Profile -----------
 
