@@ -16,20 +16,20 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" style="color:blue" href="/index.html">Domovská stránka</a>
+            <a class="nav-link active" aria-current="page" href="/index.html">Domovská stránka</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="color:blue" href="/contact.html">Kontakty</a>
+            <a class="nav-link" href="/contact.html">Kontakty</a> 
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color:blue" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Více
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" style="color:blue" href="/article.html">Články</a></li>
-              <li><a class="dropdown-item" style="color:blue" href="/product.html">Produkty</a></li>
+              <li><a class="dropdown-item" href="/article.html">Články</a></li>
+              <li><a class="dropdown-item" href="/product.html">Produkty</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" style="color:blue" href="/about.html">O nás</a></li>
+              <li><a class="dropdown-item" href="/about.html">O nás</a></li>
             </ul>
           </li>
         </ul>
@@ -38,16 +38,11 @@
   </nav>
     </div>
   </nav>
-    <h1>Seznam článků</h1>
-    <ul>
-        {% for article in article %}
-          <li>
-            <strong>{{ article.title }}</strong>
-              Datum: {{ article.date }}
-              Autor: {{ article.author }}
-          </li>
-        {% endfor %}
-    </ul>
+  <h1>Seznam článků</h1>
+
+    {% for article in articles %}
+        <p><strong>{{ article.title }}</strong> - Datum: {{ article.date }}, Autor: {{ article.author }}</p>
+    {% endfor %}
  </body>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
  </html>
