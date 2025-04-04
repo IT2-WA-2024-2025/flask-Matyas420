@@ -34,13 +34,13 @@ def contact():
 
 @app.route("/article")
 def article():
-    article = [
-    {"Název": "Jak začít s Pythonem", "date": "2025-03-31", "author": "Jan Novák"},
-    {"Název": "Flask: Webový framework pro začátečníky", "date": "2025-03-30", "author": "Petr Svoboda"},
-    {"Název": "Datové struktury v Pythonu", "date": "2025-03-29", "author": "Eva Dvořáková"}]
-
-
-    return render_template('article.html', article=article)
+    articles = [ 
+        {"title": "Jak začít s Pythonem", "date": "2025-03-31", "author": "Jan Novák"},
+        {"title": "Flask: Webový framework pro začátečníky", "date": "2025-03-30", "author": "Petr Svoboda"},
+        {"title": "Datové struktury v Pythonu", "date": "2025-03-29", "author": "Eva Dvořáková"}
+    ]
+    
+    return render_template('article.html', articles=articles)
 
 #----------- Profile -----------
 
