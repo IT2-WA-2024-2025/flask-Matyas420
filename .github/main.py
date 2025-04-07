@@ -8,9 +8,7 @@ def static_files(filename):
     return send_from_directory('static', filename)
 
 #----------- Úvod -----------
-@app.route("/kontakt")
-def kontakt():
-    return render_template('contact.html')
+
 
 @app.route("/product")
 def product():
