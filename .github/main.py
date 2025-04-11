@@ -58,7 +58,7 @@ def index():
 #-------- GET ----------------
 
 @app.route('/get', methods=['GET', 'POST'])
-def index():
+def index2():
     zprava = None
     if request.method == 'POST' :
         jmeno = request.form.get('jmeno')
