@@ -57,16 +57,26 @@ def index():
 
 #-------- GET ----------------
 
-@app.route('/get', methods=['GET', 'POST'])
-def index2():
-    zprava = None
-    if request.method == 'POST' :
-        jmeno = request.form.get('jmeno')
-        if jmeno:
-            zprava = f'Ahoj, {jmeno}!'
-        else:
-            zprava = 'Prosím, vyplňte jméno.'
-    return render_template('index.html', zprava=zprava)
+@app.route("/", methods=['GET', 'POST'])
+def home_page():
+    string = None
+    if request.method == 'POST':
+      jmeno = request.form.get('jméno')
+      prijmeni = request.form.get('příjmení')
+      email = request.form.get('email')
+      uzivatelske_jmeno = request.form.get('uživatelské_jméno')
+      rodne_cislo = request.form.get('rodné_číslo')
+
+      if not jmeno or not prijmeni or not email or not uzivatelske_jmeno or not rodne_cislo:
+         string = "Musíte vyplnit všechna pole"
+      else:
+         if rodne_cislo.isdigit():
+            if string is None:
+               string = (
+                f"Zadali jste: {jmeno} {prijmeni}, E-mail: {email}, "
+                f"Uživatelské jméno: {uzivatelske_jmeno}, Rodné číslo: {rodne_cislo}."
+            )
+    return render_template("index.html", datum=datetime.now().strftime('%d.%m.%Y %H:%M:%S'), string=string)
         
         
 

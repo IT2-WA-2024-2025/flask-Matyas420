@@ -54,10 +54,23 @@
   <p>Dnešní datum a čas: {{ datum }}</p>
 
   <form method="POST">
-      <label for="jmeno">Tvé jméno:</label>
-      <input type="text" id="jmeno" name="jmeno"><br><br>
-      <input type="submit" value="Pozravit!">
-  </form>
+    <label>Jméno:</label>
+    <input type="text" name="jmeno" required><br><br>
+
+    <label>Příjmení:</label>
+    <input type="text" name="prijmeni" pattern="[A-Za-zÁ-ž\s\-]+" required><br><br>
+
+    <label>Email:</label>
+    <input type="email" name="email" required><br><br>
+
+    <label>Uživatelské jméno:</label>
+    <input type="text" name="uzivatelske_jmeno" required><br><br>
+
+    <label>Rodné číslo:</label>
+    <input type="number" name="rodne_cislo" required><br><br>
+
+    <button type="submit">Odeslat</button>
+</form>
 
   {% if zprava %}
   <p>{{zprava}}</p>
