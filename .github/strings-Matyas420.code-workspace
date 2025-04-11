@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../Documents/GitHub/strings-Matyas420"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Flask"
+	}
+}
