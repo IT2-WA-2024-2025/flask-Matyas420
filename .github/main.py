@@ -60,25 +60,27 @@ def index():
 
 @app.route("/", methods=['GET', 'POST'])
 def home_page():
-     string = None
-     if request.method == 'POST':
-       jmeno = request.form.get('jméno')
-       prijmeni = request.form.get('příjmení')
-       email = request.form.get('email')
-       uzivatelske_jmeno = request.form.get('uživatelské_jméno')
-       rodne_cislo = request.form.get('rodné_číslo')
- 
-       if not jmeno or not prijmeni or not email or not uzivatelske_jmeno or not rodne_cislo:
-          string = "Musíte vyplnit všechna pole"
-       else:
-          if rodne_cislo.isdigit():
-             if string is None:
-                string = (
-                 f"Zadali jste: {jmeno} {prijmeni}, E-mail: {email}, "
-                 f"Uživatelské jméno: {uzivatelske_jmeno}, Rodné číslo: {rodne_cislo}."
-             )
-     return render_template("index.html", datum=datetime.now().strftime('%d.%m.%Y %H:%M:%S'), string=string)
+    string = None
+    if request.method == 'POST':
+        jmeno = request.form.get('jmeno')
+        prijmeni = request.form.get('prijmeni')
+        email = request.form.get('email')
+        uzivatelske_jmeno = request.form.get('uzivatelske_jmeno')
+        rodne_cislo = request.form.get('rodne_cislo')
+
         
+        if not jmeno or not prijmeni or not email or not uzivatelske_jmeno or not rodne_cislo:
+            string = "Musíte vyplnit všechna pole."
+        else:
+           
+            if rodne_cislo.isdigit():
+                string = (
+                    f"Zadali jste: {jmeno} {prijmeni}, E-mail: {email}, "
+                    f"Uživatelské jméno: {uzivatelske_jmeno}, Rodné číslo: {rodne_cislo}."
+                )
+            else:
+                string = "Rodné číslo musí být tvořeno pouze číslicemi."
+    return render_template("index.html", datum=datetime.now().strftime('%d.%m.%Y %H:%M:%S'), string=string)
         
 
 if __name__ == "__main__":
